@@ -1,0 +1,66 @@
+var questions = [{
+  question:"do you know INDRAJIT (Yes/No)",
+  answer:"yes"
+},{
+  question:"What is his favourite sports?"+"\n"+"a: cricket"+"\n"+"b: Football"+"\n"+"c: Badminton"+"\n"+"->",
+  answer:"a"
+},{
+  question:"what's his favourite color"+"\n"+"a:Red"+"\n"+"b:Blue"+"\n"+"c:Green"+"\n"+"->",
+  answer:"b"
+},{
+  question:"What's his age? "+"\n"+"a:27"+"\n"+"b:21"+"\n"+"c:23"+"\n"+"->",
+  answer:"c"
+},{
+  question:"who's his favourite actor?"+"\n"+"a:surya"+"\n"+"b:vijay"+"\n"+"c:vikram"+"\n"+"->",
+  answer:"b"
+}];
+var readlinesync = require("readline-sync");
+var highscore=[{
+  name:"Indrajit",
+  sco:"5"
+},
+{
+  name:"Nissan",
+  sco:"4"
+},
+{
+  name:"N",
+  sco:"4"
+}]
+
+var ans = readlinesync.question("What's your name? ");
+console.log("Welcome "+ ans);
+var score=0;
+console.log("...................................");
+console.log("Enter the option(a/b/c) for answers.");
+
+function play(ques,answ)
+{
+  var answerrrr = readlinesync.question(ques)
+  if(answ.toUpperCase() === answerrrr.toUpperCase())
+  {
+   console.log("You are Right! :) ");
+   score++;
+  }
+   else
+   console.log("You are Wrong");
+}
+
+
+
+//console.log(questions.length);
+for(i=0;i<questions.length;i++)
+{
+  var s=questions[i];
+  play(s.question,s.answer);
+}
+  console.log("your score is: "+score);
+
+console.log("--------------------------------------------------");
+for(i=0;i<3;i++)
+  {
+    var k=i;
+    console.log(++k+"."+"name: "+highscore[i].name);
+    console.log("score: "+highscore[i].sco);
+  }
+console.log("If you have beaten the highscore send me a screenshot of that and I will upadte your name");
